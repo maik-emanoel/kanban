@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --primary-color: #7C3AED;
+    --secondary-color: #FBFAFF;
+    --terciary-color: #ffffff;
+    --title-color: #403937;
+    --parag-color: #756966;
+    --tag-bg-color: #E2D6FF;
+    --placeholder-color: #7C7C8A;
+    --nav-font-color: #CAB3FF;
+
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 1.6rem;
+}
+
+.menu-toggle,
+.filter-options {
+    display: none;
+}
+
+li {
+    list-style: none;
+}
+
+#app {
+    display: flex;
+    background: var(--primary-color);
+}
+
+.left {
+    max-width: 17.5rem;
+    width: 100%;
+    padding: 3.2rem 2.7rem 0 3.5rem;
+}
+
+.left .logo {
+    margin-bottom: 6rem;
+}
+
+.left nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3.6rem;
+}
+
+.left nav ul li {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    font-weight: 500;
+    line-height: 125%;
+    color: var(--nav-font-color);
+    transition: all .3s ease-in-out;
+
+    cursor: pointer;
+}
+
+.left nav ul li:hover,
+.left nav ul li.active,
+.left nav ul li:hover img {
+    color: var(--terciary-color);
+    filter: brightness(150%);
+}
+
+main {
+    width: 100%;
+    margin-top: .4rem;
+    padding: 4.8rem 3.2rem 0;
+    border-radius: 3.2rem 0 0 0;
+    background: var(--secondary-color);
+}
+
+main header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 3.2rem;
+}
+
+main header,
+main form {
+    padding: 0 2.4rem;
+}
+
+main header h1 {
+    display: flex;
+    gap: 1.2rem;
+}
+
+main form {
+    display: flex;
+    gap: 1.6rem;
+
+    margin-bottom: 3.2rem;
+}
+
+main form .filter-group {
+    max-width: 13.5rem;
+    width: 100%;
+    height: 4.8rem;
+}
+
+main form .filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+
+    font-size: 1.4rem;
+    color: var(--terciary-color);
+
+    height: 100%;
+    border-radius: .5rem;
+    background: var(--primary-color);
+
+    cursor: pointer;
+    transition: filter .3s ease-in-out;
+}
+
+main form  .filter:hover {
+    filter: brightness(1.1);
+}
+
+main form .input-group {
+    position: relative;
+    width: 100%;
+}
+
+main form #text {
+    all: unset;
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+    padding: 0 5rem 0 5.8rem;
+    border: 0.7px solid #E3E3E3;
+    box-shadow: .0rem .4rem 1.6rem rgba(22, 22, 22, 0.1);
+    border-radius: .8rem;
+
+    background: var(--terciary-color) url(./assets/search-icon.svg);
+    background-repeat: no-repeat;
+    background-position: 2.4rem;
+}
+
+main form .input-group .clear-input {
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.4rem;
+
+    display: none;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+
+    margin-bottom: 3.2rem;
+}
+
+.container .box {
+    padding-inline: 2.4rem;
+}
+
+.container .box .title {
+    font-size: 2rem;
+    line-height: 130%;
+    padding: 2.4rem 0;
+    color: var(--title-color);
+}
+
+.container .box .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.container .box .cards .card {
+    background: var(--terciary-color);
+    padding: 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    box-shadow: .0rem .4rem 1.6rem #EAE2FD;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.card:hover {
+    scale: 1.07;
+    box-shadow: none;
+}
+
+.card .card-title {
+    font-size: 1.4rem;
+    line-height: 130%;
+    color: var(--title-color)
+}
+
+.card .card-parag {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 130%;
+    color: var(--parag-color);
+}
+
+.card .tag-group {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.card .tag {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 130%;
+    color: var(--primary-color);
+
+    padding: .4rem .8rem;
+    border-radius: .8rem;
+    background: var(--tag-bg-color);
+}
+
+@media (max-width: 768px) {
+    .left {
+        width: fit-content;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .menu-section {
+        transition: all .3s ease-in-out;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .7rem;
+    
+        width: 3rem;
+    
+        cursor: pointer;
+        margin-bottom: 6rem;
+      }
+    
+      .menu-toggle .one,
+      .menu-toggle .two,
+      .menu-toggle .three {
+        width: 100%;
+        height: .3rem;
+        border-radius: .6rem;
+        background: var(--terciary-color);
+    
+        transition: all .3s ease-in-out;
+      }
+
+      .menu-section.expanded .one {
+        transform: rotate(45deg) translate(.8rem, .5rem);
+      }
+      .menu-section.expanded .two {
+        opacity: 0;
+      }
+      .menu-section.expanded .three {
+        transform: rotate(-45deg) translate(.9rem, -.6rem);
+      }
+
+    nav ul li p {
+        display: none;
+        transition: all .3s ease-in-out;
+    }
+    main form .filter-group {
+        width: fit-content;
+    }
+
+    main form .filter {
+        padding: 2rem;
+    }
+
+    main form .filter p {
+        display: none;
+    }
+}
+
+@media (max-width: 680px) {
+    :root {
+        font-size: 45%;
+    }
+
+    .left {
+        padding: 7rem 1.8rem 0;
+    }
+
+    .menu-section {
+        position: sticky;
+        top: 7rem;
+    }
+
+    nav ul li img {
+        width: 2.4rem;
+    }
+
+    .profile-picture img {
+        width: 6rem;
+    }
+
+    main header {
+        gap: .8rem;
+    }
+
+    main header h1 {
+        display: initial;
+    }
+
+    main header,
+    main form {
+        padding: 0;
+    }
+
+    main header img {
+        width: 2.4rem;
+    }
+
+    main form .filter img{
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+
+    main form #text {
+        background-position: 2rem;
+        background-size: 2.4rem, 2.4rem;
+    }
+
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        column-gap: 1.6rem;
+    }
+
+    .container .box {
+        padding-inline: 0;
+    }
+}
+
+@media (max-width: 320px) {
+    :root {
+        font-size: 40%;
+    }
+
+    .left {
+        padding-inline: 1.5rem;
+    }
+}
