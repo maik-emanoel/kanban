@@ -50,3 +50,12 @@ filterOptions.forEach((option, i) => {
         isVisible = false
     })
 })
+
+document.addEventListener('click', (event) => {
+    const isClickInsideFilter = filter.contains(event.target)
+    const isClickInsideFilterOptions = filterOptionsGroup.contains(event.target)
+    if (!isClickInsideFilter && !isClickInsideFilterOptions) {
+      filterOptionsGroup.style.display = 'none'
+      isVisible = false
+    }
+  })
