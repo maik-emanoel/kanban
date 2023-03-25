@@ -38,6 +38,7 @@ li {
 #app {
     display: flex;
     background: var(--primary-color);
+    min-height: 100vh;
 }
 
 .left {
@@ -200,7 +201,6 @@ main form .input-group .clear-input {
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
 
     margin-bottom: 3.2rem;
-    min-height: 100vh;
 }
 
 .container .box {
