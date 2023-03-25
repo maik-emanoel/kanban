@@ -7,6 +7,9 @@ const filterOptionsGroup = document.querySelector('.filter-options')
 const filterOptions = document.querySelectorAll('.options')
 const boxes = document.querySelectorAll('.box')
 
+const textInput = document.querySelector('#text')
+const cards = document.querySelectorAll('.card')
+
 menuToggle.addEventListener('click', activateMenuExpanded)
 function activateMenuExpanded() {
     menuSection.classList.toggle('expanded')
@@ -58,4 +61,19 @@ document.addEventListener('click', (event) => {
       filterOptionsGroup.style.display = 'none'
       isVisible = false
     }
-  })
+})
+
+textInput.addEventListener('input', filterBytitle)
+function filterBytitle() {
+    cards.forEach((card) => {
+        let titleCard = card.querySelector('h3')
+        titleCard = titleCard.textContent.toLowerCase()
+        const filterTextInput = textInput.value.toLowerCase()
+
+        if(!titleCard.includes(filterTextInput)) {
+            card.style.display = 'none'
+        } else {
+            card.style.display = 'flex'
+        }
+    })
+}
