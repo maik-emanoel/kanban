@@ -267,6 +267,11 @@ main form .input-group .clear-input {
     padding: .4rem .8rem;
     border-radius: .8rem;
     background: var(--tag-bg-color);
+    cursor: pointer;
+}
+
+.tag:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
