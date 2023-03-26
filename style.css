@@ -185,6 +185,11 @@ main form #text {
     background-position: 2.4rem;
 }
 
+#text:focus,
+#text:hover {
+    border: 1px solid var(--primary-color);
+}
+
 main form .input-group .clear-input {
     width: 1rem;
     height: 1rem;
