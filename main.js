@@ -9,6 +9,7 @@ const boxes = document.querySelectorAll('.box')
 
 const textInput = document.querySelector('#text')
 const cards = document.querySelectorAll('.card')
+const clearInputImg = document.querySelector('.clear-input')
 
 menuToggle.addEventListener('click', activateMenuExpanded)
 function activateMenuExpanded() {
@@ -75,5 +76,22 @@ function filterBytitle() {
         } else {
             card.style.display = 'flex'
         }
+    })
+
+    if(textInput.value.length >= 1) {
+        clearInputImg.style.display = 'initial'
+    } else {
+        clearInputImg.style.display = 'none'
+    }
+}
+
+clearInputImg.addEventListener('click', clearInput)
+function clearInput() {
+    textInput.value = ''
+    textInput.focus()
+    clearInputImg.style.display = 'none'
+
+    cards.forEach((card) => {
+        card.style.display = 'flex'
     })
 }
