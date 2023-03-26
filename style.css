@@ -24,6 +24,7 @@
 body {
     min-height: 100vh;
     font-size: 1.6rem;
+    overflow: overlay;
 }
 
 .menu-toggle,
@@ -272,6 +273,19 @@ main form .input-group .clear-input {
 
 .tag:hover {
     text-decoration: underline;
+}
+
+body::-webkit-scrollbar{
+    width: .6rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: .6rem;
 }
 
 @media (max-width: 768px) {
