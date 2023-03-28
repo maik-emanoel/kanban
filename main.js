@@ -95,3 +95,27 @@ function clearInput() {
         card.style.display = 'flex'
     })
 }
+
+
+let cardBeingDragged = null
+
+for(let card of cards) {
+    card.addEventListener("dragstart", () => {
+        cardBeingDragged = card
+    })
+
+    card.addEventListener("dragend", () => {
+        cardBeingDragged = null
+    })
+}
+
+for(let box of boxes) {
+    box.addEventListener("dragover", (event) => {
+        event.preventDefault()
+    })
+
+    box.addEventListener("drop", (event) => {
+        event.preventDefault()
+        box.querySelector(".cards").appendChild(cardBeingDragged)
+    })
+}
