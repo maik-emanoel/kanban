@@ -245,6 +245,30 @@ main form .input-group .clear-input {
     box-shadow: none;
 }
 
+.title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-wrapper svg {
+    border: .1rem solid var(--primary-color);
+    border-radius: 50%;
+    padding: .3rem;
+    cursor: pointer;
+
+    width: 2rem;
+    height: 2rem;
+}
+
+svg:hover {
+    background: var(--primary-color);
+}
+
+svg:hover path {
+    fill: var(--terciary-color);
+}
+
 .card .card-title {
     font-size: 1.4rem;
     line-height: 130%;
