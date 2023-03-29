@@ -187,8 +187,7 @@ function addNewCard() {
             tags: [],
         }
         
-        const tagInput = document.querySelector('#add-tag-input')
-        tagInput.value = ''
+        addCard.style.display = 'none'
 
     } else {
         alert('Por favor, insira as informações necessárias!')
