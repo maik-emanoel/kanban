@@ -11,6 +11,10 @@ const textInput = document.querySelector('#text')
 const cards = document.querySelectorAll('.card')
 const clearInputImg = document.querySelector('.clear-input')
 
+const addCard = document.querySelector('#addCard')
+const showBtn = document.querySelector('.show-add-card')
+const closeBtn = document.querySelector('.close-add-card')
+
 menuToggle.addEventListener('click', activateMenuExpanded)
 function activateMenuExpanded() {
     menuSection.classList.toggle('expanded')
@@ -118,4 +122,14 @@ for(let box of boxes) {
         event.preventDefault()
         box.querySelector(".cards").appendChild(cardBeingDragged)
     })
+}
+
+showBtn.addEventListener('click', showAddCardDiv)
+function showAddCardDiv() {
+    addCard.style.display = 'initial'
+}
+
+closeBtn.addEventListener('click', closeAddCardDiv)
+function closeAddCardDiv() {
+    addCard.style.display = 'none'
 }
