@@ -15,6 +15,9 @@ const addCard = document.querySelector('#addCard')
 const showBtn = document.querySelector('.show-add-card')
 const closeBtn = document.querySelector('.close-add-card')
 
+const addTagBtn = document.querySelector('.add-tag-btn')
+const addNewCardBtn = document.querySelector('.add-card-btn')
+
 menuToggle.addEventListener('click', activateMenuExpanded)
 function activateMenuExpanded() {
     menuSection.classList.toggle('expanded')
@@ -133,3 +136,67 @@ closeBtn.addEventListener('click', closeAddCardDiv)
 function closeAddCardDiv() {
     addCard.style.display = 'none'
 }
+
+
+const cardsOfBoxToDo = document.querySelector('.box.to-do .cards')
+
+let cardData = {
+    name: '',
+    description: '',
+    tags: [],
+}
+
+addTagBtn.addEventListener('click', addTag)
+function addTag() {
+    const tagInput = document.querySelector('#add-tag-input')
+    const tag = tagInput.value
+
+    alert(`Tag '${tag}' foi adicionada com sucesso!`)
+    cardData.tags.push(tag)
+    tagInput.value = ''
+}
+
+addNewCardBtn.addEventListener('click', addNewCard)
+function addNewCard() {
+    const cardName = document.querySelector('#card-name').value
+    const cardDescription = document.querySelector('#description-card').value
+
+    if(cardName !== '' && cardDescription !== '') {
+        cardData.name = cardName
+        cardData.description = cardDescription
+
+        const newCard = document.createElement('div')
+        newCard.innerHTML = `
+        <div class="card" draggable="true">
+            <h3 class="card-title">${cardData.name}</h3>
+            <p class="card-parag">
+                ${cardData.description}
+            </p>
+            <div class="tag-group">
+                ${cardData.tags.map(tag => `<div class="tag">${tag}</div>`).join('')}
+            </div>
+        </div>
+    `
+
+        const cardsOfBoxToDo = document.querySelector('.box.to-do .cards')
+        cardsOfBoxToDo.appendChild(newCard)
+
+        cardData = {
+            name: '',
+            description: '',
+            tags: [],
+        }
+        
+        const tagInput = document.querySelector('#add-tag-input')
+        tagInput.value = ''
+
+    } else {
+        alert('Por favor, insira as informações necessárias!')
+    }
+}
+  
+  
+  
+  
+  
+  
