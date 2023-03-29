@@ -111,10 +111,58 @@
         </form>
 
         <div class="container">
+          <div id="addCard">
+            <img src="./assets/x-icon.png" alt="Ícone de fechar" class="close-add-card"/>
+
+            <div class="wrapper">
+              <label for="card-name">Nome do card</label>
+              <input
+                type="text"
+                name="card-name"
+                id="card-name"
+                placeholder="Digite o nome do card"
+              />
+            </div>
+
+            <div class="wrapper">
+              <label for="description-card">Descrição do card</label>
+              <textarea
+                name="description-card"
+                id="description-card"
+                cols="30"
+                rows="6"
+                placeholder="Digite a descrição do card"
+              ></textarea>
+            </div>
+
+            <div class="wrapper">
+              <label for="add-tag-input">Adicionar tag</label>
+              <div class="add-tag-wrapper">
+                <input
+                  type="text"
+                  name="text"
+                  id="add-tag-input"
+                  placeholder="Digite o nome da tag"
+                />
+                <button class="add-tag-btn">
+                  <img src="./assets/plus-icon.svg" alt="Ícone de adição" />
+                </button>
+              </div>
+            </div>
+
+            <button class="add-card-btn">Adicionar novo card</button>
+          </div>
+
           <div class="box to-do">
             <div class="title-wrapper">
               <h2 class="title">A fazer</h2>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="20"
+                height="20"
+                class="show-add-card"
+              >
                 <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                 <path
                   d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
