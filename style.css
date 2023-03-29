@@ -84,6 +84,7 @@ main {
     padding: 4.8rem 3.2rem 0;
     border-radius: 3.2rem 0 0 0;
     background: var(--secondary-color);
+    position: relative;
 }
 
 main header {
@@ -207,6 +208,105 @@ main form .input-group .clear-input {
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
 
     margin-bottom: 3.2rem;
+}
+
+#addCard {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f8fd;
+
+    width: 50%;
+    min-width: 25rem;
+    padding: 3.2rem 2.4rem;
+    border-radius: .6rem;
+    box-shadow: .0rem .4rem 1.6rem rgba(22, 22, 22, 0.1);
+
+    z-index: 1;
+    display: none;
+}
+
+#addCard img {
+    width: 1.8rem;
+    display: block;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+#addCard label {
+    display: block;
+    margin-bottom: .4rem;
+    line-height: 130%;
+    font-weight: 500;
+    color: var(--title-color);
+}
+
+#addCard .wrapper {
+    margin-bottom: 1.6rem;
+}
+
+#addCard .wrapper:last-of-type {
+    margin-bottom: 2.8rem;
+}
+
+#addCard #add-tag-input {
+    width: 100%;
+}
+
+#addCard input,
+#addCard textarea {
+    width: 90%;
+    border: none;
+    resize: none;
+    padding: .8rem 1.6rem;
+    border-radius: .6rem;
+    box-shadow: .0rem .4rem 1.6rem rgba(22, 22, 22, 0.1);
+}
+
+#addCard textarea::placeholder {
+    font-family: 'Inter', sans-serif;
+}
+
+#addCard input:hover,
+#addCard input:focus,
+#addCard textarea:hover,
+#addCard textarea:focus {
+    outline: .1rem solid var(--primary-color);
+}
+
+#addCard .add-tag-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    max-width: 52.6rem;
+}
+
+#addCard button {
+    all: unset;
+}
+
+#addCard .add-tag-btn {
+    border-radius: 50%;
+    background: var(--primary-color);
+    padding: .4rem;
+    transition: filter .2s;
+}
+
+#addCard .add-card-btn {
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    padding: .8rem 2.4rem;
+    border-radius: .6rem;
+    color: var(--terciary-color);
+    background: var(--primary-color);
+    transition: filter .2s;
+}
+
+#addCard .add-card-btn:hover,
+#addCard .add-tag-btn:hover {
+    filter: brightness(1.2);
 }
 
 .container .box {
