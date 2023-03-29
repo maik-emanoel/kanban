@@ -467,6 +467,7 @@ body::-webkit-scrollbar-thumb {
         display: none;
         transition: all .3s ease-in-out;
     }
+
     main form .filter-group {
         width: fit-content;
     }
@@ -477,6 +478,14 @@ body::-webkit-scrollbar-thumb {
 
     main form .filter p {
         display: none;
+    }
+
+    #addCard {
+        top: 15%;
+        right: 50%;
+        transform: translate(-50%, 0);
+
+        width: 85%;
     }
 }
 
